@@ -67,7 +67,7 @@ def aggregate_memories(memories):
 
 def parallelized_collect_rollout(batch_size, envs, model, choose_action):
     warnings.filterwarnings("ignore", category=DeprecationWarning) 
-    assert len(envs) == batch_size, 
+    assert len(envs) == batch_size
     memories = [Memory() for _ in range(batch_size)]
     next_observations = [single_env.reset() for single_env in envs]
     previous_frames = [obs for obs in next_observations]
