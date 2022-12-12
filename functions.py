@@ -161,16 +161,6 @@ def upload_data():
   import wget
   url = 'https://www.dropbox.com/s/62pao4mipyzk3xu/vista_traces.zip'
   filename = wget.download(url)
-  !unzip -o -q filename
-
-  trace_root = "./vista_traces"
-  trace_path = [
-          "20210726-154641_lexus_devens_center", 
-          "20210726-155941_lexus_devens_center_reverse", 
-          "20210726-184624_lexus_devens_center", 
-          "20210726-184956_lexus_devens_center_reverse", 
-      ]
-  trace_path = [os.path.join(trace_root, p) for p in trace_path]
   return trace_path
 
 def vista_reset():
