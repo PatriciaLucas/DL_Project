@@ -158,8 +158,10 @@ def vista_step(curvature=None, speed=None):
     car.step_sensors()
     
 def upload_data():
-  !wget -nc -q --show-progress https://www.dropbox.com/s/62pao4mipyzk3xu/vista_traces.zip
-  !unzip -o -q vista_traces.zip
+  import wget
+  url = 'https://www.dropbox.com/s/62pao4mipyzk3xu/vista_traces.zip'
+  filename = wget.download(url)
+  !unzip -o -q filename
 
   trace_root = "./vista_traces"
   trace_path = [
