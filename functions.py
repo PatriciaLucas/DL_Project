@@ -161,7 +161,7 @@ def upload_data():
   import wget
   url = 'https://www.dropbox.com/s/62pao4mipyzk3xu/vista_traces.zip'
   filename = wget.download(url)
-  return trace_path
+  return filename
 
 def vista_reset():
     warnings.filterwarnings("ignore", category=DeprecationWarning) 
