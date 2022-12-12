@@ -158,19 +158,18 @@ def vista_step(curvature=None, speed=None):
     car.step_sensors()
     
 def upload_data():
-    warnings.filterwarnings("ignore", category=DeprecationWarning) 
-    !wget -nc -q --show-progress https://www.dropbox.com/s/62pao4mipyzk3xu/vista_traces.zip
-    !unzip -o -q vista_traces.zip
+  !wget -nc -q --show-progress https://www.dropbox.com/s/62pao4mipyzk3xu/vista_traces.zip
+  !unzip -o -q vista_traces.zip
 
-    trace_root = "./vista_traces"
-    trace_path = [
-        "20210726-154641_lexus_devens_center", 
-        "20210726-155941_lexus_devens_center_reverse", 
-        "20210726-184624_lexus_devens_center", 
-        "20210726-184956_lexus_devens_center_reverse", 
-    ]
-    trace_path = [os.path.join(trace_root, p) for p in trace_path]
-    return trace_path
+  trace_root = "./vista_traces"
+  trace_path = [
+          "20210726-154641_lexus_devens_center", 
+          "20210726-155941_lexus_devens_center_reverse", 
+          "20210726-184624_lexus_devens_center", 
+          "20210726-184956_lexus_devens_center_reverse", 
+      ]
+  trace_path = [os.path.join(trace_root, p) for p in trace_path]
+  return trace_path
 
 def vista_reset():
     warnings.filterwarnings("ignore", category=DeprecationWarning) 
